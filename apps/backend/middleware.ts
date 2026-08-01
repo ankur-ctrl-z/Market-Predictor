@@ -3,6 +3,8 @@ import { prisma } from "db";
 import type { NextFunction, Request, Response } from "express";
 const supabase = createClient("https://sgvenstbkiedwlmctkym.supabase.co", process.env.SUPABASE_SECRET_KEY!);
 
+import type { NextFunction } from "express";
+
 
 export async function middleware(req: Request, res: Response, next: NextFunction) {
     const token = req.headers.authorization;
@@ -36,3 +38,5 @@ export async function middleware(req: Request, res: Response, next: NextFunction
     }
 
 }
+
+
