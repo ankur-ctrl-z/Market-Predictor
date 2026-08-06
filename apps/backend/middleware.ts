@@ -1,14 +1,18 @@
 import { createClient } from "@supabase/supabase-js";
 import { prisma } from "db";
 import type { NextFunction, Request, Response } from "express";
-const supabase = createClient("https://sgvenstbkiedwlmctkym.supabase.co", process.env.SUPABASE_SECRET_KEY!);
 
-import type { NextFunction } from "express";
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_SECRET_KEY;
 
+if (!supabaseUrl || !supabaseKey) {
+    throw new Error("NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SECRET_KEY must be set in .env");
+}
+
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 export async function middleware(req: Request, res: Response, next: NextFunction) {
-    const token = req.headers.authorization;
-    try {
+    const token = req.headers.authorization;    try {
         const { data: { user }, error } = await supabase.auth.getUser(token);
         const address: string = user?.user_metadata.custom_claims.address;
         const userDb = await prisma.user.upsert({

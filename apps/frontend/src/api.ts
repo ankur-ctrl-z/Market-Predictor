@@ -2,7 +2,7 @@ import axios from "axios";
 
 const API_BASE = "http://localhost:3000";
 
-export const api = {
+export const api = { 
   // Public endpoints
   getMarkets: async () => {
     const response = await axios.get(`${API_BASE}/markets`);

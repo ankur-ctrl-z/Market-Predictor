@@ -4,7 +4,7 @@ import type { Market, Orderbook } from "../types";
 interface OrderFormProps {
   market: Market;
   token: string;
-  onOrderPlaced: () => void;
+  onOrderPlaced: () => void; 
 }
 
 function parseOrderbook(value: string | Orderbook): Orderbook {

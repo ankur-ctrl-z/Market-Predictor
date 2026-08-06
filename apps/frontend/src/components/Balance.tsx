@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 interface BalanceProps {
-  token: string;
+  token: string; 
 }
 
 export function Balance({ token }: BalanceProps) {
@@ -118,4 +118,4 @@ export function Balance({ token }: BalanceProps) {
       </div>
     </div>
   );
-}
+} 

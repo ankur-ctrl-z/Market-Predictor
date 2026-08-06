@@ -3,9 +3,23 @@
   "module": "index.ts",
   "type": "module",
   "private": true,
-
   "scripts": {
     "dev": "tsx watch index.ts",
     "start": "tsx index.ts"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.106.2",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "uuidv4": "^6.2.13",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.15.3",
+    "tsx": "^4.23.8",
+    "typescript": "^5.9.2"
   }
 }

@@ -3,7 +3,7 @@ import type { Market, Orderbook } from "../types";
 interface MarketDetailProps {
   market: Market;
   onBack: () => void;
-}
+} 
 
 interface Level {
   price: number;
